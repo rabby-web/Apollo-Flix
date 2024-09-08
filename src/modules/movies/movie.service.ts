@@ -12,7 +12,14 @@ const getAllMovies = async () => {
   return result;
 };
 
+// get single move
+const getSingleMovie = async (id: string) => {
+  const result = await Movie.findById(id);
+  return result;
+};
+
 export const MovieServices = {
   createMovie,
   getAllMovies,
+  getSingleMovie,
 };
