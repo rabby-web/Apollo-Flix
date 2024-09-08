@@ -21,5 +21,5 @@ const getSingleMovie = async (id: string) => {
 export const MovieServices = {
   createMovie,
   getAllMovies,
-  getSingleMovie,
+    getSingleMovie,
 };
