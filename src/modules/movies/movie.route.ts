@@ -11,5 +11,6 @@ router.get("/", MovieControllers.getAllMovies);
 
 // get single movie
 router.get("/:id", MovieControllers.getSingleMovie);
+router.get("/:slug", MovieControllers.getMovieBySlug);
 
 export const MovieRoutes = router;

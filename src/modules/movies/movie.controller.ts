@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from "express";
 import { MovieServices } from "./movie.service";
 
@@ -40,8 +41,28 @@ const getSingleMovie = async (req: Request, res: Response) => {
   });
 };
 
+const getMovieBySlug = async (req: Request, res: Response) => {
+  try {
+    const { slug } = req.params;
+    const result = await MovieServices.getMovieBySlug(slug);
+
+    res.status(200).json({
+      success: true,
+      message: "Movies are fetched successfully !",
+      data: result,
+    });
+  } catch (err: any) {
+    res.status(500).json({
+      success: false,
+      message: "Could not fetch movies!",
+      error: err,
+    });
+  }
+};
+
 export const MovieControllers = {
   createMovie,
   getAllMovies,
   getSingleMovie,
+  getMovieBySlug,
 };
