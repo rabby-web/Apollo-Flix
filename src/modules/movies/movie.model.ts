@@ -50,15 +50,25 @@ const movieSchema = new Schema<TMovie>({
   },
 });
 
-movieSchema.pre("save", async function (next) {
-  const date = format(this.releaseDate, "dd-MM-yyyy");
+// way-1
+// movieSchema.pre("save", async function (next) {
+//   const date = format(this.releaseDate, "dd-MM-yyyy");
+
+//   //creating slug
+//   this.slug = slugify(`${this.title}-${date}}`, {
+//     lower: true,
+//   });
+
+//   next();
+// });
+movieSchema.method("createSlug", function createSlug(payload: TMovie) {
+  const date = format(payload.releaseDate, "dd-MM-yyyy");
 
   //creating slug
-  this.slug = slugify(`${this.title}-${date}}`, {
+  const slug = slugify(`${payload.title}-${date}}`, {
     lower: true,
   });
-
-  next();
+  return slug;
 });
 
 export const Movie = model<TMovie>("Movie", movieSchema);
