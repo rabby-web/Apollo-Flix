@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FilterQuery, Query } from "mongoose";
@@ -8,6 +6,7 @@ import { Movie } from "./movie.model";
 import { QueryBuilder } from "../../builder/QueryBuilder";
 import { MovieSearchableFields } from "./movie.constants";
 const createMovie = async (payload: TMovie) => {
+  // change code and refactor
   /* 
   Way1: Using business logic here....
 
