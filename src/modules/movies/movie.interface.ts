@@ -11,6 +11,7 @@ export type TMovie = {
   totalRating: number;
   isDeleted?: boolean;
 };
+
 // Put all user instance methods in this interface:
 export type TMovieMethods = {
   createSlug(payload: TMovie): string;

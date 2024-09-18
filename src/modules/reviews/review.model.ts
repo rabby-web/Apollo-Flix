@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 import { TReview } from "./review.interface";
 
 const reviewSchema = new Schema<TReview>({
