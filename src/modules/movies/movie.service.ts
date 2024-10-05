@@ -44,7 +44,7 @@ const createMovie = async (payload: TMovie) => {
 
   return result;
 };
-
+// change sum commit
 // const searchMovies = async (payload: any) => {
 //   let searchTerm = "";
 
